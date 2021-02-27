@@ -29,7 +29,7 @@ export const Home: React.FC = ({ navigation }: any) => {
                     alignItems: "center",
                     marginBottom: 15
                 }}>
-                    <TouchableOpacity onPress={() => navigation.navigate("")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("Product", { id: item.id })}>
                         <AntDesign name="rightcircle" size={24} color={item.selected ? "#fff" : "#F26C68"} />
                     </TouchableOpacity>
                 </View>

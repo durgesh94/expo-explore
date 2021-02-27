@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Intro } from "../screens/Intro";
 import { Home } from '../screens/home';
+import { Product } from '../screens/product';
 
 const Stack = createStackNavigator();
 
@@ -12,7 +13,9 @@ const MyStack = () => {
             <Stack.Screen name="Home" component={Home} options={{
                 headerShown: false
             }} />
-            {/* Add screens here */}
+            <Stack.Screen name="Product" component={Product} options={{
+                headerShown: false
+            }} />
         </Stack.Navigator>
     );
 }
