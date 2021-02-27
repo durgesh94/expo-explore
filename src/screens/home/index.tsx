@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { introStyles } from "./intro.style";
-import { Feather, Entypo, FontAwesome5, FontAwesome, AntDesign } from '@expo/vector-icons';
+import { Feather, FontAwesome5, FontAwesome, AntDesign } from '@expo/vector-icons';
 import { ScrollView, FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import Categories from "../../../assets/data/categories";
 import Populars from "../../../assets/data/popular";
@@ -29,7 +29,9 @@ export const Home: React.FC = ({ navigation }: any) => {
                     alignItems: "center",
                     marginBottom: 15
                 }}>
-                    <TouchableOpacity onPress={() => navigation.navigate("Product", { id: item.id })}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate("Product", { id: item.id })}
+                    >
                         <AntDesign name="rightcircle" size={24} color={item.selected ? "#fff" : "#F26C68"} />
                     </TouchableOpacity>
                 </View>
@@ -45,24 +47,20 @@ export const Home: React.FC = ({ navigation }: any) => {
                     flexDirection: "row",
                     justifyContent: "space-between",
                     paddingHorizontal: 20,
-                    // backgroundColor: "yellow",
                     padding: 10,
                     alignItems: "center"
                 }}>
                 <Image
                     style={{ width: 40, height: 40, borderRadius: 30 }}
-                    source={require("../../../assets/images/profile.png")} />
-                {/* <Image
-                    style={{ width: 40, height: 40 }}
-                    source={require("../../../assets/images/menubar.png")} /> */}
+                    source={require("../../../assets/images/pro.jpg")}
+                />
                 <Feather name="menu" size={35} color="black" />
             </View>
-            {/* Title */}
             <ScrollView>
+                {/* Title */}
                 <View style={{
                     marginTop: 30,
                     paddingHorizontal: 20,
-                    // backgroundColor: "pink"
                 }}>
                     <Text style={{
                         fontSize: 16,
@@ -80,14 +78,12 @@ export const Home: React.FC = ({ navigation }: any) => {
                     paddingHorizontal: 20,
                     flexDirection: "row",
                     alignItems: "center",
-                    // backgroundColor: "yellow"
                 }}>
                     <Feather name="search" size={24} color="black" />
                     <View style={{
                         flex: 1,
                         marginLeft: 15,
                         borderBottomWidth: 1,
-                        // backgroundColor: "pink"
                     }}>
                         <Text style={{
                             fontSize: 14,
@@ -98,17 +94,14 @@ export const Home: React.FC = ({ navigation }: any) => {
                 </View>
                 {/* Categorie */}
                 <View style={{
-                    // flex: 1,
                     marginTop: 30,
                     paddingLeft: 20,
-                    // backgroundColor: "pink"
                 }}>
                     <Text style={{
                         fontSize: 20,
                         fontWeight: "700"
                     }}>Categories</Text>
                     <View style={{
-                        // backgroundColor: "blue",
                         paddingTop: 15
                     }}>
                         <FlatList
@@ -122,7 +115,6 @@ export const Home: React.FC = ({ navigation }: any) => {
                 </View>
                 {/* Popular */}
                 <View style={{
-                    // backgroundColor: "yellow",
                     marginTop: 20,
                     paddingHorizontal: 20
                 }}>
@@ -131,91 +123,89 @@ export const Home: React.FC = ({ navigation }: any) => {
                         fontSize: 20
                     }}>Popular</Text>
                     <View style={{
-                        // backgroundColor: "blue",
                         paddingTop: 15
                     }}>
                         {Populars.map((item: any, idx: number) => (
-                            <View
-                                key={idx}
-                                style={{
-                                    marginBottom: 20
-                                }}>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("Product")}>
                                 <View
+                                    key={idx}
                                     style={{
-                                        backgroundColor: "#fff",
-                                        borderRadius: 20,
-                                        flexDirection: "row",
-                                        justifyContent: "space-between",
-                                        // alignItems: "center",
-                                        paddingTop: 10
+                                        marginBottom: 20,
                                     }}>
-                                    <View>
-                                        <View style={{
+                                    <View
+                                        style={{
+                                            backgroundColor: "#fff",
+                                            borderRadius: 20,
                                             flexDirection: "row",
-                                            // backgroundColor: "brown",
-                                            paddingLeft: 20,
+                                            justifyContent: "space-between",
+                                            paddingTop: 10
                                         }}>
-                                            <FontAwesome5 name="redhat" size={24} color="#F5CA48" />
-                                            <Text style={{
-                                                fontSize: 16,
-                                                fontWeight: "900",
-                                                paddingLeft: 10,
-                                                paddingBottom: 20,
-                                            }}>Top of the week</Text>
-                                        </View>
-                                        <View
-                                            style={{
-                                                // backgroundColor: "grey",
-                                                paddingLeft: 20,
-                                                paddingBottom: 10
-                                            }}>
-                                            <Text style={{
-                                                paddingBottom: 5,
-                                                fontSize: 16,
-                                                fontWeight: "900"
-                                            }}>{item.title}</Text>
-                                            <Text style={{
-                                                fontSize: 16,
-                                                fontWeight: "500",
-                                                color: "#C4C4C4"
-                                            }}>Weight {item.weight}</Text>
-                                        </View>
-                                        <View style={{
-                                            flexDirection: "row"
-                                        }}>
+                                        <View>
                                             <View style={{
-                                                backgroundColor: "#F5CA48",
-                                                borderTopEndRadius: 20,
-                                                borderBottomLeftRadius: 20,
-                                                paddingHorizontal: 30,
-                                                alignItems: "center",
-                                                justifyContent: "center"
-                                            }}>
-                                                <Feather name="plus" size={24} color="black" />
-                                            </View>
-                                            <View style={{
-                                                justifyContent: "center",
-                                                alignItems: "center",
-                                                padding: 21,
                                                 flexDirection: "row",
-                                                // backgroundColor: "orange"
+                                                paddingLeft: 20,
                                             }}>
-                                                <FontAwesome name="star" size={14} color="black" />
+                                                <FontAwesome5 name="redhat" size={24} color="#F5CA48" />
                                                 <Text style={{
-                                                    fontWeight: "700",
                                                     fontSize: 16,
-                                                    paddingLeft: 5
-                                                }}>{item.rating}</Text>
+                                                    fontWeight: "900",
+                                                    paddingLeft: 10,
+                                                    paddingBottom: 20,
+                                                }}>Top of the week</Text>
+                                            </View>
+                                            <View
+                                                style={{
+                                                    paddingLeft: 20,
+                                                    paddingBottom: 10
+                                                }}>
+                                                <Text style={{
+                                                    paddingBottom: 5,
+                                                    fontSize: 16,
+                                                    fontWeight: "900"
+                                                }}>{item.title}</Text>
+                                                <Text style={{
+                                                    fontSize: 16,
+                                                    fontWeight: "500",
+                                                    color: "#C4C4C4"
+                                                }}>Weight {item.weight}</Text>
+                                            </View>
+                                            <View style={{
+                                                flexDirection: "row"
+                                            }}>
+                                                <View style={{
+                                                    backgroundColor: "#F5CA48",
+                                                    borderTopEndRadius: 20,
+                                                    borderBottomLeftRadius: 20,
+                                                    paddingHorizontal: 30,
+                                                    alignItems: "center",
+                                                    justifyContent: "center"
+                                                }}>
+                                                    <Feather name="plus" size={24} color="black" />
+                                                </View>
+                                                <View style={{
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    padding: 21,
+                                                    flexDirection: "row",
+                                                }}>
+                                                    <FontAwesome name="star" size={14} color="black" />
+                                                    <Text style={{
+                                                        fontWeight: "700",
+                                                        fontSize: 16,
+                                                        paddingLeft: 5
+                                                    }}>{item.rating}</Text>
+                                                </View>
                                             </View>
                                         </View>
-                                    </View>
-                                    <View>
-                                        <Image
-                                            style={{ width: 160, height: 120 }}
-                                            source={item.image} />
+                                        <View>
+                                            <Image
+                                                style={{ width: 160, height: 120 }}
+                                                source={item.image} />
+                                        </View>
                                     </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         ))}
                     </View>
                 </View>

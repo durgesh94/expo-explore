@@ -39,19 +39,18 @@ export const Product: React.FC = ({ navigation }: any) => {
                 justifyContent: "space-between",
                 paddingHorizontal: 20,
                 paddingTop: 10
-                // backgroundColor: "pink",
             }}>
-                <View style={{
-                    borderWidth: 2,
-                    padding: 10,
-                    borderRadius: 10,
-                    borderColor: "#CDCDCD",
-                    alignSelf: "center"
-                }}>
-                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <View style={{
+                        borderWidth: 2,
+                        padding: 8,
+                        borderRadius: 10,
+                        borderColor: "#CDCDCD",
+                        alignSelf: "center"
+                    }}>
                         <AntDesign name="left" size={16} color="#000" />
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
                 <View style={{
                     borderRadius: 10,
                     padding: 10,
@@ -64,7 +63,6 @@ export const Product: React.FC = ({ navigation }: any) => {
             <ScrollView>
                 {/* Title */}
                 <View style={{
-                    // backgroundColor: "yellow",
                     marginTop: 30,
                     paddingHorizontal: 20
                 }}>
@@ -75,7 +73,6 @@ export const Product: React.FC = ({ navigation }: any) => {
                 </View>
                 {/* Price */}
                 <View style={{
-                    // backgroundColor: "pink",
                     marginTop: 20,
                     paddingHorizontal: 20
                 }}>
@@ -90,12 +87,10 @@ export const Product: React.FC = ({ navigation }: any) => {
                 <View style={{
                     flexDirection: "row",
                     justifyContent: "space-between",
-                    // backgroundColor: "brown",
                     marginTop: 30,
                     paddingLeft: 20
                 }}>
                     <View style={{
-                        // backgroundColor: "#fff",
                         padding: 1
                     }}>
                         <Text style={styles.txtTitle}>Size</Text>
@@ -106,7 +101,6 @@ export const Product: React.FC = ({ navigation }: any) => {
                         <Text style={styles.txtValue}>{data.deliveryIn}</Text>
                     </View>
                     <View style={{
-                        // backgroundColor: "yellow",
                         padding: 1
                     }}>
                         <Image
@@ -119,12 +113,10 @@ export const Product: React.FC = ({ navigation }: any) => {
                 </View>
                 {/* Ingredients */}
                 <View style={{
-                    // backgroundColor: "yellow",
                     marginTop: 30,
                     paddingLeft: 20
                 }}>
                     <View style={{
-                        // backgroundColor: "brown",
                         marginBottom: 20
                     }}>
                         <Text style={{
@@ -140,8 +132,8 @@ export const Product: React.FC = ({ navigation }: any) => {
                         showsHorizontalScrollIndicator={false}
                     />
                 </View>
+                {/* Button */}
                 <View style={{
-                    // backgroundColor: "red",
                     marginVertical: 40
                 }}>
                     <TouchableOpacity style={{
