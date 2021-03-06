@@ -85,11 +85,12 @@ export const Slider1: React.FC = ({ navigation }: any) => {
         console.log(slider);
     }
 
+    let i: any = 0, timeout: any;
+
     const _onSlideChange = () => {
-        console.log(slider);
+        // console.log(slider);
     }
 
-    let i = 0, timeout: any;
     const tick = () => {
         slider?.goToSlide(i);   //this.slider is ref of <AppIntroSlider....
         i += 1;
@@ -128,5 +129,6 @@ export const Slider1: React.FC = ({ navigation }: any) => {
         bottomButton={false}
         activeDotStyle={{ paddingLeft: 20, backgroundColor: "#ff0000" }}
         ref={(ref) => (slider = ref!)}
+        removeClippedSubviews={false} // First image of the slider flickers
     />;
 }
