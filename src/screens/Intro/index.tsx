@@ -8,14 +8,24 @@ export const Intro: React.FC = ({ navigation }: any) => {
     return (
         <View style={introStyles.container}>
             <TouchableOpacity style={{
-                backgroundColor: "orange",
+                backgroundColor: "#000",
                 paddingVertical: 15,
                 paddingHorizontal: 50,
                 borderRadius: 30,
                 marginTop: 20
             }}
                 onPress={() => navigation.navigate("Home")}>
-                <Text>Open Food Delivery UI</Text>
+                <Text style={{color: "#FFF", fontSize: 18}}>Open Food Delivery UI</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={{
+                backgroundColor: "#000",
+                paddingVertical: 15,
+                paddingHorizontal: 50,
+                borderRadius: 30,
+                marginTop: 20
+            }}
+                onPress={() => navigation.navigate("Profile")}>
+                <Text style={{color: "#FFF", fontSize: 18}}>Open Profile UI</Text>
             </TouchableOpacity>
         </View>
     )
