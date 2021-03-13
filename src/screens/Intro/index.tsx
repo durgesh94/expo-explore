@@ -7,25 +7,20 @@ export const Intro: React.FC = ({ navigation }: any) => {
 
     return (
         <View style={introStyles.container}>
-            <TouchableOpacity style={{
-                backgroundColor: "#000",
-                paddingVertical: 15,
-                paddingHorizontal: 50,
-                borderRadius: 30,
-                marginTop: 20
-            }}
+            <View style={{ padding: 10 }}>
+                <Text style={introStyles.heading}>UI DESIGN EXAMPLES</Text>
+            </View>
+            <TouchableOpacity style={introStyles.btnWrapper}
                 onPress={() => navigation.navigate("Home")}>
-                <Text style={{color: "#FFF", fontSize: 18}}>Open Food Delivery UI</Text>
+                <Text style={introStyles.btnText}>Food Delivery</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{
-                backgroundColor: "#000",
-                paddingVertical: 15,
-                paddingHorizontal: 50,
-                borderRadius: 30,
-                marginTop: 20
-            }}
+            <TouchableOpacity style={introStyles.btnWrapper}
                 onPress={() => navigation.navigate("Profile")}>
-                <Text style={{color: "#FFF", fontSize: 18}}>Open Profile UI</Text>
+                <Text style={introStyles.btnText}>User Profile</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={introStyles.btnWrapper}
+                onPress={() => navigation.navigate("Flat")}>
+                <Text style={introStyles.btnText}>Flat Sales</Text>
             </TouchableOpacity>
         </View>
     )
