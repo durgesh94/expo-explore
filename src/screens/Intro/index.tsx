@@ -22,6 +22,10 @@ export const Intro: React.FC = ({ navigation }: any) => {
                 onPress={() => navigation.navigate("Flat")}>
                 <Text style={introStyles.btnText}>Flat Sales</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={introStyles.btnWrapper}
+                onPress={() => navigation.navigate("Cred-Home")}>
+                <Text style={introStyles.btnText}>CRED-HOME</Text>
+            </TouchableOpacity>
         </View>
     )
 }
