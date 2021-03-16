@@ -1,17 +1,15 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { introStyles } from "./intro.style";
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useAuth } from '../../providers';
+import { View, Text, TouchableOpacity } from 'react-native';
 
-export const Intro: React.FC = ({ navigation }: any) => {
-
-    const { getStarted } = useAuth();
+export const SignUp: React.FC = ({ navigation }: any) => {
 
     return (
-        <View style={introStyles.container}>
-            <Text>Intro</Text>
-            <Text>Onboarding screen : it is show only the first time when user install app</Text>
+        <View style={{
+            flex: 1,
+            alignItems: "center",
+            backgroundColor: "#fff"
+        }}>
+            <Text>Sign Up Screen</Text>
             <View style={{
                 marginTop: 20
             }}>
@@ -22,11 +20,11 @@ export const Intro: React.FC = ({ navigation }: any) => {
                         paddingVertical: 10,
                         borderRadius: 10
                     }}
-                    onPress={() => getStarted()}>
+                    onPress={() => navigation.navigate("Login")}>
                     <Text style={{
                         fontSize: 18,
                         color: "#fff"
-                    }}>Get Started</Text>
+                    }}>Login</Text>
                 </TouchableOpacity>
             </View>
         </View>
