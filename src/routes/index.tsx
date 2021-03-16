@@ -7,6 +7,7 @@ import { Profile } from '../screens/profile';
 import { Flat } from '../screens/flat';
 import { FlatDetails } from '../screens/flat-details';
 import { CredHome } from '../screens/CRED/Home';
+import { CredMoney } from '../screens/CRED/Money';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ const MyStack = () => {
             <Stack.Screen name="Flat" component={Flat} />
             <Stack.Screen name="Flat-Details" component={FlatDetails} />
             <Stack.Screen name="Cred-Home" component={CredHome} />
+            <Stack.Screen name="Cred-Money" component={CredMoney} />
         </Stack.Navigator>
     );
 }
