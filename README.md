@@ -1,5 +1,9 @@
-# npm install
-install dependancies
+# Expo-cli
 
-# npm run
-run project
+Expo-cli project.
+
+
+## Contributors
+
+Durgesh Tambe
+

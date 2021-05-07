@@ -4,6 +4,7 @@ export const introStyles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        paddingTop: 20
     }
 })
