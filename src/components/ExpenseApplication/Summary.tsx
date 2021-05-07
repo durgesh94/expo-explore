@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import { COLORS, FONTS, icons, SIZES } from "../constants";
+import { COLORS, FONTS, icons, SIZES } from "../../constants";
 
 export interface SummaryProps {
     data: any;

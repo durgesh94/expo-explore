@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { COLORS } from "../constants";
+import { COLORS } from "../../constants";
 
 export interface IconButtonProps {
     icon: any;
@@ -9,6 +9,8 @@ export interface IconButtonProps {
     height?: number;
     color?: any;
     alignItems?: any;
+    onClick(): any;
+    isSelected?: boolean;
 }
 
 export const IconButton: React.FC<IconButtonProps> = ({ ...props }) => {
@@ -17,7 +19,7 @@ export const IconButton: React.FC<IconButtonProps> = ({ ...props }) => {
         <>
             <TouchableOpacity
                 style={{ justifyContent: 'center', alignItems: props.alignItems, width: 50, }}
-                onPress={() => alert("Coming Soon!")}
+                onPress={() => props.onClick()}
             >
                 <Image
                     source={props.icon}
