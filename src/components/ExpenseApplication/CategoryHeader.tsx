@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: "space-between",
         alignItems: "center",
-        marginTop: SIZES.padding,
+        marginVertical: SIZES.padding,
         paddingHorizontal: SIZES.padding,
     },
     btnWrapper: {

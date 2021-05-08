@@ -20,7 +20,7 @@ export const Button: React.FC<ButtonProps> = ({ ...props }) => {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: "#99ff55",
+        backgroundColor: "#07D1D3",
         borderRadius: 10,
         paddingVertical: 15,
         paddingHorizontal: 25,
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 16,
-        color: "#000000",
+        color: "#FFFFFF",
         fontWeight: "700"
     }
 })

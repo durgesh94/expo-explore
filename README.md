@@ -4,5 +4,8 @@ install dependancies
 # npm run
 run project
 
-#Expo Go 
+# UI Projects
+1. Expenses Application
+
+# Expo Go 
 https://expo.io/@dntambe/projects/expo-explore
