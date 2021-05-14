@@ -1,6 +1,8 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, Dimensions } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+
+const { width: w, height: h } = Dimensions.get("window");
 
 export interface ButtonProps {
     title: string;
@@ -12,7 +14,7 @@ export const Button: React.FC<ButtonProps> = ({ ...props }) => {
     return (
         <>
             <TouchableOpacity style={styles.button} onPress={() => props.onClick()} >
-                <Text style={styles.text}>{props.title}</Text>
+                <Text adjustsFontSizeToFit={true} numberOfLines={1} style={styles.text}>{props.title}</Text>
             </TouchableOpacity>
         </>
     )
@@ -22,13 +24,16 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: "#07D1D3",
         borderRadius: 10,
-        paddingVertical: 15,
-        paddingHorizontal: 25,
-        marginBottom: 20
+        justifyContent: "center",
+        marginBottom: 20,
+        width: w - 100,
+        height:  50,
     },
     text: {
+        alignSelf: "center",
         fontSize: 16,
         color: "#FFFFFF",
-        fontWeight: "700"
+        fontWeight: "700",
+        lineHeight: 18
     }
 })
