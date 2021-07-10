@@ -1,30 +1,32 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, Text, ImageBackground, Image, Dimensions } from "react-native";
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+import { FlatList, ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { Card } from "../../components/Plant/Card";
 
 const { width, height } = Dimensions.get("window");
 
 const DATA: any[] = [
-    { id: 1, name: "Dikto", image: require("../../../assets/icons/plant-01.png") },
-    { id: 2, name: "Luivas", image: require("../../../assets/icons/plant-02.png") },
-    { id: 3, name: "Jarks", image: require("../../../assets/icons/plant-03.png") },
-    { id: 4, name: "Orcyd", image: require("../../../assets/icons/plant-04.png") },
-    { id: 5, name: "Orcyd", image: require("../../../assets/icons/plant-05.png") }
+    { id: 1, name: "Dikto", image: require("../../../assets/images/plant/plant-01.jpg") },
+    { id: 2, name: "Luivas", image: require("../../../assets/images/plant/plant-02.jpg") },
+    { id: 3, name: "Jarks", image: require("../../../assets/images/plant/plant-03.jpg") },
+    { id: 4, name: "Orcyd", image: require("../../../assets/images/plant/plant-04.jpg") },
+    { id: 5, name: "Orcyd", image: require("../../../assets/images/plant/plant-05.jpg") },
+    { id: 6, name: "Orcyd", image: require("../../../assets/images/plant/plant-06.png") }
 ];
 
 export const PlantApp: React.FC = ({ navigation }: any) => {
 
     return (
-        <View style={{
+        <ScrollView style={{
             flex: 1,
             backgroundColor: "#FAFAFA"
         }}>
             <View style={{
                 flex: 1,
                 backgroundColor: "#EFF2F5",
-                marginHorizontal: 10
+                marginHorizontal: 10,
+                paddingBottom: 30
             }}>
                 <View style={{
                     backgroundColor: "#FFFFFF",
@@ -50,14 +52,16 @@ export const PlantApp: React.FC = ({ navigation }: any) => {
                                 fontWeight: "700"
                             }}>
                                 New Plants
-                </Text>
-                            <Image style={{
-                                width: 30,
-                                height: 30,
-                                marginEnd: 25,
-                                paddingEnd: 25,
-                                tintColor: "#A6D9C8"
-                            }} source={require("../../../assets/icons/more_icon.png")} />
+                            </Text>
+                            <TouchableOpacity onPress={() => alert("Coming Soon!")}>
+                                <Image style={{
+                                    width: 30,
+                                    height: 30,
+                                    marginEnd: 25,
+                                    paddingEnd: 25,
+                                    tintColor: "#A6D9C8",
+                                }} source={require("../../../assets/icons/more_icon.png")} />
+                            </TouchableOpacity>
                         </View>
                         <FlatList
                             style={{ marginHorizontal: 5 }}
@@ -93,18 +97,20 @@ export const PlantApp: React.FC = ({ navigation }: any) => {
                         paddingTop: 25
                     }}>
                         <View>
+                            <TouchableOpacity onPress={() => navigation.navigate("ui-plantDetails")}>
+                                <ImageBackground
+                                    source={require("../../../assets/images/plant/plant-07.png")}
+                                    style={{
+                                        width: width * 0.4,
+                                        height: 100,
+                                        backgroundColor: "#E3E3E1",
+                                        borderRadius: 15
+                                    }}
+                                    imageStyle={{ resizeMode: "cover", borderRadius: 15 }}
+                                />
+                            </TouchableOpacity>
                             <ImageBackground
-                                source={require("../../../assets/icons/plant-08.png")}
-                                style={{
-                                    width: width * 0.4,
-                                    height: 100,
-                                    backgroundColor: "#E3E3E1",
-                                    borderRadius: 15
-                                }}
-                                imageStyle={{ resizeMode: "contain" }}
-                            />
-                            <ImageBackground
-                                source={require("../../../assets/icons/plant-07.png")}
+                                source={require("../../../assets/images/plant/plant-08.jpg")}
                                 style={{
                                     width: width * 0.4,
                                     height: 100,
@@ -112,19 +118,19 @@ export const PlantApp: React.FC = ({ navigation }: any) => {
                                     marginTop: 10,
                                     borderRadius: 15
                                 }}
-                                imageStyle={{ resizeMode: "contain" }}
+                                imageStyle={{ resizeMode: "cover", borderRadius: 15 }}
                             />
                         </View>
                         <View>
                             <ImageBackground
-                                source={require("../../../assets/icons/plant-05.png")}
+                                source={require("../../../assets/images/plant/plant-09.jpg")}
                                 style={{
                                     width: width * 0.45,
                                     height: 210,
                                     backgroundColor: "#E3E3E1",
                                     borderRadius: 20
                                 }}
-                                imageStyle={{ resizeMode: "contain" }}
+                                imageStyle={{ resizeMode: "cover", borderRadius: 15 }}
                             />
                         </View>
                     </View>
@@ -172,14 +178,15 @@ export const PlantApp: React.FC = ({ navigation }: any) => {
                                 fontWeight: "700",
                                 opacity: 0.5
                             }}>Add New</Text>
-                            <TouchableOpacity style={{
-                                backgroundColor: "#E2E8F6",
-                                borderRadius: 15,
-                                paddingHorizontal: 20,
-                                paddingVertical: 5,
-                                alignSelf: "flex-end",
-                                marginLeft: 10
-                            }}>
+                            <TouchableOpacity onPress={() => alert("Coming Soon!")}
+                                style={{
+                                    backgroundColor: "#E2E8F6",
+                                    borderRadius: 15,
+                                    paddingHorizontal: 20,
+                                    paddingVertical: 5,
+                                    alignSelf: "flex-end",
+                                    marginLeft: 10
+                                }}>
                                 <Text style={{
                                     fontSize: 32,
                                     textAlign: "center",
@@ -191,6 +198,6 @@ export const PlantApp: React.FC = ({ navigation }: any) => {
                     </View>
                 </View>
             </View>
-        </View>
+        </ScrollView>
     )
 }

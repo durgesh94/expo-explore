@@ -13,7 +13,7 @@ export const BarChart: React.FC<BarChartProps> = ({ ...props }) => {
 
     return (
         <View style={styles.container}>
-            <Svg width={width} height={width} style={{ width: "100%", height: "auto" }}>
+            <Svg width={width - 50} height={"100%"} style={{ width: "100%", height: "auto" }}>
                 <VictoryChart
                     domainPadding={{ x: 70 }}
                     theme={VictoryTheme.material}>
@@ -38,8 +38,9 @@ export const BarChart: React.FC<BarChartProps> = ({ ...props }) => {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
+        flex: 1,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        paddingBottom: 100,
     }
 });

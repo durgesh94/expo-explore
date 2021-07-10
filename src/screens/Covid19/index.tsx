@@ -5,6 +5,7 @@ import { Picker } from "@react-native-picker/picker";
 import { Card } from "../../components/Covid/Card";
 import axios from 'axios';
 import { BarChart } from '../../components/Covid/BarChart';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const url = "https://covid19.mathdro.id/api";
 
@@ -59,49 +60,52 @@ export const Covid19: React.FC = ({ navigation }: any) => {
     return (
         <SafeAreaView style={{
             flex: 1,
-            paddingHorizontal: 20,
+            // paddingHorizontal: 20,
             backgroundColor: "#FAFAFA",
         }}>
-            <Image
-                source={require("../../../assets/images/covid19.png")}
-                style={{
-                    width: width - 200,
-                    // aspectRatio: 1,
-                    resizeMode: "center",
-                    alignSelf: "center"
-                }}
-            />
-
-            <View style={{
-                flexDirection: "row",
+            <ScrollView style={{
+                paddingHorizontal: 20,
             }}>
-                <Card type={"Infected"} count={data?.confirmed.value} date={data?.lastUpdate.substring(0, 10)} desc={"Number of active cases of COVID-19"} color={"#7F7FFF"} />
-                <Card type={"Recovered"} count={data?.recovered.value} date={data?.lastUpdate.substring(0, 10)} desc={"Number of recoveries from COVID-19"} color={"#7FFF7F"} />
-                <Card type={"Deaths"} count={data?.deaths.value} date={data?.lastUpdate.substring(0, 10)} desc={"Number of deaths caused by COVID-19"} color={"#FF7F7F"} />
-            </View>
+                <Image
+                    source={require("../../../assets/images/covid19.png")}
+                    style={{
+                        width: width - 200,
+                        height: "10%",
+                        // aspectRatio: 1,
+                        resizeMode: "contain",
+                        alignSelf: "center"
+                    }}
+                />
 
-            <Picker
-                mode="dropdown"
-                style={{
-                    width: width - 150,
-                    alignSelf: "center",
-                    marginTop: 20
-                }}
-                selectedValue={country}
-                onValueChange={(itemValue) => setCountry(itemValue)}
-            >
-                <Picker.Item key="global" label="Global" value="global" />
-                {countries.map((country) => <Picker.Item key={country} label={country} value={country} />)}
-            </Picker>
+                <View style={{
+                    flexDirection: "row",
+                }}>
+                    <Card type={"Infected"} count={data?.confirmed.value} date={data?.lastUpdate.substring(0, 10)} desc={"Number of active cases of COVID-19"} color={"#7F7FFF"} />
+                    <Card type={"Recovered"} count={data?.recovered.value} date={data?.lastUpdate.substring(0, 10)} desc={"Number of recoveries from COVID-19"} color={"#7FFF7F"} />
+                    <Card type={"Deaths"} count={data?.deaths.value} date={data?.lastUpdate.substring(0, 10)} desc={"Number of deaths caused by COVID-19"} color={"#FF7F7F"} />
+                </View>
+                <Picker
+                    mode="dropdown"
+                    style={{
+                        width: width - 150,
+                        alignSelf: "center",
+                        marginTop: 20
+                    }}
+                    selectedValue={country}
+                    onValueChange={(itemValue) => setCountry(itemValue)}
+                >
+                    <Picker.Item key="global" label="Global" value="global" />
+                    {countries.map((country) => <Picker.Item key={country} label={country} value={country} />)}
+                </Picker>
 
-            <Text style={{
-                alignSelf: "center"
-            }}>Current state in {country}</Text>
-            {/* <Text>{JSON.stringify(data)}</Text>
+                <Text style={{
+                    alignSelf: "center"
+                }}>Current state in {country}</Text>
+                {/* <Text>{JSON.stringify(data)}</Text>
             <Text>{JSON.stringify(chartData)}</Text> */}
 
-            <BarChart data={chartData} />
-
+                <BarChart data={chartData} />
+            </ScrollView>
         </SafeAreaView>
     )
 }

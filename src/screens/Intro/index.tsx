@@ -14,6 +14,7 @@ export const Intro: React.FC = ({ navigation }: any) => {
                 loop={true}
                 style={{ height: 200 }}
             />
+            {/* <Button title="Animation" onClick={() => navigation.navigate("animation")} /> */}
             <Button title="Plant Application : UI" onClick={() => navigation.navigate("ui-plant")} />
             <Button title="COVID-19 Application : UI + API" onClick={() => navigation.navigate("covid19")} />
             <Button title="Expense Application : UI" onClick={() => navigation.navigate("ui-expense")} />

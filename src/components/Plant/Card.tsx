@@ -17,7 +17,8 @@ export const Card: React.FC<CardProps> = ({ item }) => {
                     marginLeft: 20,
                     marginTop: 15,
                     backgroundColor: "#FFFFFF",
-                    borderRadius: 10
+                    borderRadius: 10,
+                    overflow: "hidden"
                 }}
                 imageStyle={{ resizeMode: "contain" }}
             >
